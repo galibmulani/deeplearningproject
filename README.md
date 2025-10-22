@@ -1,2 +1,2 @@
 # deeplearningproject
-X ray deep learning projects
+X ray deep learning project
