@@ -1,2 +1,2 @@
 # deeplearningproject
-X ray deep learning project
+X ray deep learning project by Mulani Galib.
