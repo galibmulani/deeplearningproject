@@ -1,9 +1,10 @@
 import sys
-from Xray.components.data_ingestion import DataIngestion
 from Xray.entity.artifact_entity import DataIngestionArtifact
 from Xray.exceptions import XRayExceptions
 from Xray.logger import logging
 from Xray.entity.config_entity import DataIngestionConfig
+from Xray.components.data_ingestion import DataIngestion
+
 
 class TrainingPipeline:
     def __init__(self):

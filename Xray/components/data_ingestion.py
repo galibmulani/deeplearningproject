@@ -5,7 +5,6 @@ from Xray.entity.artifact_entity import DataIngestionArtifact
 from Xray.entity.config_entity import DataIngestionConfig
 from Xray.exceptions import XRayExceptions
 from Xray.logger import logging
-from Xray.pipeline.training_pipeline import *
 
 
 class DataIngestion:
@@ -35,7 +34,7 @@ class DataIngestion:
             )
 
             logging.info("Exited the initiate_data_ingestion method of DataIngestion class")
-            return dataingestion_artifact;
+            return dataingestion_artifact;  
     
         except Exception as e:
             raise XRayExceptions(e, sys)
