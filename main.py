@@ -9,5 +9,6 @@ def start_training_pipeline():
     except Exception as e:
         raise XRayExceptions(e, sys) 
     
+    
 if __name__ == "__main__":
     start_training_pipeline()
