@@ -38,7 +38,6 @@ class ModelTrainer:
         logging.info("Entered the train method of ModelTrainer class")
         try:
             self.model.train()
-
             pbar = tqdm(self.data_transformation_artifact.transformed_train_object)
             correct: int = 0
             processed = 0
@@ -105,7 +104,7 @@ class ModelTrainer:
                     )
                 )
                 logging.info(
-                    "Test set: Average loss:{:.4f}, Accuracy: {}/{} {{:.2f}%}".format(
+                    "Test set: Average loss:{:.4f}, Accuracy: {}/{} {{:.2f}}%".format(
                         test_loss,
                         correct,
                         len(
@@ -116,7 +115,7 @@ class ModelTrainer:
                 )
                 logging.info("Exited the test Method of ModelTrainer class")
         except Exception as e:
-            XRayExceptions(e,sys)
+            raise XRayExceptions(e,sys)
     
     def initiate_model_trainer(self)->ModelTrainerArtifact:
         try:
@@ -132,14 +131,13 @@ class ModelTrainer:
                 optimizer=optimizer,
                 **self.model_trainer_config.scheduler_params
             )
-
             for epochs in range(1,self.model_trainer_config.epochs+1):
                 print("Epoch :",epochs)
 
                 self.train(optimizer=optimizer)
-
                 optimizer.step()
                 scheduler.step()
+
 
                 self.test()
 
@@ -168,4 +166,4 @@ class ModelTrainer:
             )
             return model_trainer_artifact;
         except Exception as e:
-            XRayExceptions(e,sys)
+            raise XRayExceptions(e,sys)

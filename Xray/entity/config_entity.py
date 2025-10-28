@@ -58,7 +58,7 @@ class ModelTrainerConfig:
     def __init__(self):
         self.artifact_dir: str = os.path.join(ARTIFACTS_DIR,TIMESTAMP,"model_training")
 
-        self.trained_bentoml_model_name: str = ""
+        self.trained_bentoml_model_name: str = "xray_model"
 
         self.trained_model_path: str = os.path.join(
             self.artifact_dir,TRAINED_MODEL_NAME

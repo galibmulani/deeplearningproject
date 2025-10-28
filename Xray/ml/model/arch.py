@@ -16,7 +16,6 @@ class Net(nn.Module):
             nn.ReLU(),
             nn.BatchNorm2d(8),
         )
-
         self.pooling1 = nn.MaxPool2d(2,2)
         self.convolution_block2 = nn.Sequential(
             nn.Conv2d(
@@ -99,7 +98,7 @@ class Net(nn.Module):
                 bias=True
             ),
             nn.ReLU(),
-            nn.BatchNorm2d(10),
+            nn.BatchNorm2d(14),
         )
         
         self.convolution_block9 = nn.Sequential(
@@ -142,5 +141,4 @@ class Net(nn.Module):
         x = self.gap(x)
         x = self.convolution_block_out(x)
         x = x.view(-1,2)
-
         return F.log_softmax(x,dim=-1)
