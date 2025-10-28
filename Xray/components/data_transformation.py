@@ -119,8 +119,8 @@ class DataTransformation:
             data_transformation_artifact = DataTransformationArtifact(
                 transformed_train_object = train_loader,
                 transformed_test_object = test_loader,
-                train_transforms_file_path = self.data_transformation_config.train_transforms_file,
-                test_transforms_file_path = self.data_transformation_config.test_transforms_file,
+                train_transform_file_path = self.data_transformation_config.train_transforms_file,
+                test_transform_file_path = self.data_transformation_config.test_transforms_file,
             )
             return data_transformation_artifact;
     
