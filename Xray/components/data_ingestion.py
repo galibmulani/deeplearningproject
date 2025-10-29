@@ -28,13 +28,13 @@ class DataIngestion:
         try:
             self.get_data_from_s3()
 
-            dataingestion_artifact:DataIngestionArtifact = DataIngestionArtifact(
+            data_ingestion_artifact:DataIngestionArtifact = DataIngestionArtifact(
                 train_file_path=self.data_ingestion_config.training_path,
                 test_file_path=self.data_ingestion_config.testing_path
             )
 
             logging.info("Exited the initiate_data_ingestion method of DataIngestion class")
-            return dataingestion_artifact;  
+            return data_ingestion_artifact;  
     
         except Exception as e:
             raise XRayExceptions(e, sys)

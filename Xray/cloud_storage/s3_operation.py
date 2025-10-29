@@ -7,7 +7,7 @@ class S3Operation:
         try:
             # aws s3 sync <source> <destination>
             command: str = (
-                f'aws s3 sync s3://{bucket_name}/{folder_bucket_name}/ {folder}'
+                f'aws s3 sync s3://{bucket_name}/{folder_bucket_name}/ {folder} '
             )
             os.system(command)
         except Exception as e:

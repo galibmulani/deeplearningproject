@@ -72,7 +72,7 @@ class DataTransformation:
                 os.path.join(self.data_ingestion_artifact.train_file_path),
                 transform = train_transform,
             )
-            
+            print("data loading")
             #test data loader
             test_data:Dataset = ImageFolder(
                 os.path.join(self.data_ingestion_artifact.test_file_path),
